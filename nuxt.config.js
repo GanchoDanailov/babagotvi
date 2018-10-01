@@ -46,9 +46,12 @@ module.exports = {
     '@nuxtjs/axios',
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
-    '@nuxtjs/font-awesome'
-    
+    '@nuxtjs/font-awesome',
+    '@nuxtjs/google-analytics'
   ],
+  'google-analytics': {
+    id: 'UA-126783232-1'
+  },
   /*
   ** Axios module configuration
   */
