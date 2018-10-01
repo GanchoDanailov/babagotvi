@@ -12,6 +12,7 @@
     "generate": "nuxt generate"
   },
   "now": {
+    "name": "babagotvi",
     "alias": "babagotvi.now.sh"
   },
   "dependencies": {
