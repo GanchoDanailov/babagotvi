@@ -1,0 +1,111 @@
+@import "~bulma/bulma";
+@import "~bulma/sass/utilities/_all";
+
+$bg-main: #d6d6d6;
+
+body {
+    background: $bg-main;
+}
+
+.babagotvi-page {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.babagotvi-page {
+    background: url('~assets/images/main-background.jpg');
+    background-size: cover;
+    @include mobile {
+        background-position-x: -320px;
+    }
+}
+
+.babagotvi-comming-soon {
+    color: white;
+    background: rgba(34, 35, 40, 0.8);
+    display: block;
+    padding: 20px;
+    margin: 10px auto;
+    top: 30px;
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    @include mobile {
+        padding: 10px;
+    }
+    @include desktop {
+        position: absolute;
+        top: 10%;
+        margin:10px;
+        max-width: 900px;
+    }
+
+    .title {
+        color: white;
+        i,h1{
+            display:inline-block;
+        }
+        h1{ 
+            font-size: 10vw;
+            font-family: 'Caveat', cursive;
+            @include mobile {
+                font-size: 14vw;
+            }
+            
+        }
+        i{
+            @include mobile {
+                font-size: 5vw;
+            } 
+        }
+        h3{
+            font-size: 7vw;
+            font-family: 'Marck Script', cursive;
+            top: -20px;
+            position: relative;
+            border-bottom: 1px double #4a4a4a;
+            @include mobile {
+                font-size: 6vw;
+                top: -10px;
+            } 
+        }
+    }
+    .border{
+        border: 2px solid #DEB251;
+        margin:10px;
+        padding: 20px;
+        &:after{
+            content: '';
+            font-size: 12px;
+            width: 0;
+            height: 0;
+            border-top: 100px solid #DEB251;
+            border-left: 100px solid transparent;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            @include mobile {
+                top: 20px;
+                right: 20px;
+                border-top: 80px solid #DEB251;
+                border-left: 80px solid transparent;
+            }
+        }
+        &:before{
+            content: 'comming soon';
+            width: 80px;
+            height: 20px;
+            position: absolute;
+            right: 20px;
+            font-size: 13px;
+            z-index: 1;
+            font-weight: bold;
+            text-transform: uppercase;
+            transform: rotate(45deg);
+            @include mobile {
+                font-size: 8px;
+            }
+        }
+    }
+}
