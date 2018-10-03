@@ -23,7 +23,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: 'red' },
 
   /*
   ** Global CSS
@@ -36,6 +36,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/core-components.js'
   ],
 
   /*
@@ -57,6 +58,16 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://nuxt-blog.firebaseio.com',
+    fbAPIKey: 'AIzaSyDX7Isd-1IPn4lKyglLxKlA_KnkLIFTNgo'
+  },
+
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   },
 
   /*
