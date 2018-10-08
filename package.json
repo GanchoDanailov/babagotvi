@@ -11,10 +11,6 @@
     "start": "cross-env NODE_ENV=production node server/index.js",
     "generate": "nuxt generate"
   },
-  "now": {
-    "name": "babagotvi",
-    "alias": "babagotvi.now.sh"
-  },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
     "@nuxtjs/bulma": "^1.2.0",
