@@ -1,8 +1,4 @@
 {
     "name": "Baba gotvi",
-    "alias": "babagotvi.bg",
-    "env": {
-        "MONGO_URL": "@my-app-mongo-url",
-        "MY_API_TOKEN": "@my-app-my-api-token"
-    }
+    "alias": "babagotvi.bg"
 }
