@@ -58,10 +58,13 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: process.env.NODE_ENV === 'production'
+      ? 'babagotvi.bg'
+      : 'http://localhost:3000'
   },
 
   env: {
-    baseUrl: process.env.BASE_URL || 'https://nuxt-blog.firebaseio.com',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     fbAPIKey: 'AIzaSyDX7Isd-1IPn4lKyglLxKlA_KnkLIFTNgo'
   },
 
