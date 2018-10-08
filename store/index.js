@@ -16,19 +16,14 @@ const createStore = () => {
     },
     actions: {
       authenticateUser(vuexContext, authData) {
-        let authUrl =
-          "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=" +
-          process.env.fbAPIKey;
+        let authUrl = "api/auth/login"
         if (!authData.isLogin) {
-          authUrl =
-            "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=" +
-            process.env.fbAPIKey;
+          authUrl = "api/auth/register"
         }
         return this.$axios
           .$post(authUrl, {
             email: authData.email,
-            password: authData.password,
-            returnSecureToken: true
+            password: authData.password
           })
           .then(result => {
             vuexContext.commit("setToken", result.idToken);
@@ -44,6 +39,7 @@ const createStore = () => {
             );
           })
           .catch(e => console.log(e));
+
       },
       initAuth(vuexContext, req) {
         let token;
@@ -52,6 +48,7 @@ const createStore = () => {
           if (!req.headers.cookie) {
             return;
           }
+          console.log('req.headers.cookie', req.headers.cookie)
           const jwtCookie = req.headers.cookie
             .split(";")
             .find(c => c.trim().startsWith("jwt="));
