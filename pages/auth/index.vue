@@ -11,6 +11,8 @@
           style="margin-left: 10px"
           @click="isLogin = !isLogin">Switch to {{ isLogin ? 'Signup' : 'Login' }}</AppButton>
       </form>
+      <div v-show="this.isAuthMessage">{{this.isAuthMessage}}</div>
+
     </div>
   </div>
 </template>
@@ -32,10 +34,23 @@ export default {
         email: this.email,
         password: this.password
       })
-      .then(() => {
-        this.$router.push('/admin');
+      .then((result) => {
+        // console.log('is user admin', result.user.roles.includes('Admin') )
+        if(result.user.roles.includes('Admin')){
+          this.$router.push('/admin')
+        } else {
+          this.$router.push('/dashboard')
+        }
       });
     }
+  },
+  computed: {
+    isAuthMessage () {
+        setTimeout(() => {
+          this.$store.state.authMessage = null
+        }, 10000)
+        return this.$store.state.authMessage
+    },
   }
 };
 </script>

@@ -59,7 +59,7 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
     baseURL: process.env.NODE_ENV === 'production'
-      ? 'babagotvi.bg'
+      ? ''
       : 'http://localhost:3000'
   },
 

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>ADMIN</h1>
+    <h1>Dashboard</h1>
     <nuxt/>
   </div>
 </template>
 <script>
 export default {
-  middleware: ["check-auth", "auth", "is-in-admin-role"],
+  middleware: ["check-auth", "auth"],
 }
 </script>
 
